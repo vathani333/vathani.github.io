@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Be My Valentine 💘</title>
+
+<style>
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #fff;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 15px;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.2);
+}
+
+#noBtn {
+    background-color: #ff4d4d;
+    color: white;
+    position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="question">Will you be my Valentine? 🥺💖</h1>
+
+<button id="yesBtn">Yes 😍</button>
+<button id="noBtn">No 🙄</button>
+
+<script>
+
+let noBtn = document.getElementById("noBtn");
+let yesBtn = document.getElementById("yesBtn");
+let question = document.getElementById("question");
+
+let messages = [
+    "Are you sure? 😭",
+    "Think again bestie...",
+    "My mom already likes you though 🧍‍♂️",
+    "This is illegal actually 🚨",
+    "Please? I’ll share fries 🍟",
+    "You’re breaking my fictional heart 💔",
+    "Last chance before I start crying dramatically"
+];
+
+let i = 0;
+
+noBtn.addEventListener("mouseover", function() {
+
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    if(i < messages.length){
+        question.innerText = messages[i];
+        i++;
+    }
+});
+
+yesBtn.addEventListener("click", function(){
+    document.body.innerHTML = `
+        <h1>AAAAAAAAAA YOU SAID YES 😭💘</h1>
+        <h2>I’m legally obligated to adore you now</h2>
+        <p>Valentine secured successfully ✅</p>
+        <p style="font-size:30px;">💖💖💖</p>
+    `;
+});
+
+</script>
+
+</body>
+</html>
